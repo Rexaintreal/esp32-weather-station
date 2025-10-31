@@ -6,7 +6,7 @@
   ==================================================================
 -->
 
-## 10/31/2025 - Setting Up Things to start the project repo files etc.  
+## 10/31/2025 3 PM - Setting Up Things to start the project repo files etc.  
 
 # Setting Things Up
 
@@ -27,6 +27,71 @@ I decided to create a workflow that also acts like a banner hehe
 ---
 ![weatherstation](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NjkzOSwicHVyIjoiYmxvYl9pZCJ9fQ==--dcc781f4ce5d2784387a5934d747d4e5cffc0b25/weatherstation.png)
 ---
+
+  
+
+## 10/31/2025 4 PM - Tested the DHT11 Sensor  
+
+# DHT 11 Temperature and Humidity Sensor Test
+So i was wondering if the sensor even actually work i tried to code a simple script to display the data from the sensor to the serial monitor of Arduino IDE the code is in Firmware/dht11test.ino in the github repository here is the code with the image
+
+
+## Code 
+```
+#include <DHT.h>
+
+// Pin and sensor type
+#define DHTPIN 18        // GPIO 18 on ESP32
+#define DHTTYPE DHT11    // DHT11 sensor
+
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  Serial.begin(115200);
+  Serial.println("DHT11 Sensor Test with ESP32 (GPIO 18)");
+  dht.begin();
+}
+
+void loop() {
+  delay(2000);  // Wait 2 seconds between readings
+
+  float humidity = dht.readHumidity();
+  float temperature = dht.readTemperature(); // Celsius
+
+  if (isnan(humidity) || isnan(temperature)) {
+    Serial.println("Failed to read from DHT11 sensor!");
+    return;
+  }
+
+  Serial.print("Temperature: ");
+  Serial.print(temperature);
+  Serial.print(" °C  |  Humidity: ");
+  Serial.print(humidity);
+  Serial.println(" %");
+}
+```
+
+---
+![DHT11test](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6Njk0NywicHVyIjoiYmxvYl9pZCJ9fQ==--f76f03f3fcbc3ed4d01a9f46395132fb90753006/DHT11test.jpeg)
+---
+
+## Connections
+
+The connections are Pretty simple ive added images as well as the connections below 
+
+DHT11 Pin  →  ESP32 Pin  →  Description
+-----------------------------------------------
+VCC        →  3.3V       →  Powers the DHT11 (works on 3.3V too)
+DATA       →  GPIO 18    →  Data signal pin (you can use any GPIO, here we use 18)
+GND        →  GND        →  Common ground connection
+
+![DHT11test3](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6Njk0OSwicHVyIjoiYmxvYl9pZCJ9fQ==--5dcd54aa98f93b78cf0f3cd49356499ef449244a/DHT11test3.jpeg)
+
+![DHT11test4](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6Njk1MCwicHVyIjoiYmxvYl9pZCJ9fQ==--77ef57c0c93ec4784895119881781b25e2b9a5eb/DHT11test4.jpeg)
+
+## Output
+Here is the Output
+![DHT11test2](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6Njk1MSwicHVyIjoiYmxvYl9pZCJ9fQ==--1076d1b2909f9bcd368f78c8733c63363b837eaa/DHT11test2.jpeg)
 
   
 
