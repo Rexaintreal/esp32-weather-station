@@ -159,6 +159,8 @@ Built this for [Hack Club Blueprint](https://blueprint.hackclub.com/) learned a 
 
 Blueprint Project Link - [Link](https://blueprint.hackclub.com/projects/1195)
 
+Demo video Link (Drive) - [Link](https://drive.google.com/file/d/187TIFS0cHQxdLSPZ7vN6z27YRnyrfwqx/view?usp=sharing)
+
 ---
 
 ## You may also like...
