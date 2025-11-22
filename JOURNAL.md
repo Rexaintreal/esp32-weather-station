@@ -94,4 +94,4 @@ Here is the Output
 ![DHT11test2](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6Njk1MSwicHVyIjoiYmxvYl9pZCJ9fQ==--1076d1b2909f9bcd368f78c8733c63363b837eaa/DHT11test2.jpeg)
 
   
-
+The full Journal is at https://blueprint.hackclub.com/projects/1195
